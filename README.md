@@ -3,7 +3,9 @@
 ## install
 Execute following command.
 ```
-git clone https://github.com/ikawamuk/CPP02_ex03_bsp_visuals.git CPP02_ex03_bsp_visuals && cd CPP02_ex03_bsp_visuals && pip install jupyterlab jupyter ipykernel notebook numpy pandas matplotlib ipywidgets
+git clone https://github.com/ikawamuk/CPP02_ex03_bsp_visuals.git CPP02_ex03_bsp_visuals && cd CPP02_ex03_bsp_visuals
+python -m venv myenv && source myenv/bin/activate
+pip install jupyterlab jupyter ipykernel notebook numpy pandas matplotlib ipywidgets
 ```
 
 ## How to use test code
