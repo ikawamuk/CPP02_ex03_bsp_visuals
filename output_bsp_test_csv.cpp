@@ -3,7 +3,7 @@
 
 bool bsp( Point const a, Point const b, Point const c, Point const point);
 
-void	output_bsp_test_csv(const Point& a, const Point& b, const Point& c, std::ofstream& ofs)
+void	output_bsp_test_scv(const Point& a, const Point& b, const Point& c, std::ofstream& ofs)
 {
 	const Fixed	MIN_X = Fixed::min(a.get_x(), Fixed::min(b.get_x(), c.get_x()));
 	const Fixed	MIN_Y = Fixed::min(a.get_y(), Fixed::min(b.get_y(), c.get_y()));
@@ -23,7 +23,7 @@ void	output_bsp_test_csv(const Point& a, const Point& b, const Point& c, std::of
 		dx.setRawBits(1);
 	if (dy == 0)
 		dy.setRawBits(1);
-	ofs << "x,y,color" << std::endl;
+	ofs << "x,y,boolean" << std::endl;
 	for (Fixed x = start_x; x <= end_x; x += dx)
 	{
 		for (Fixed y = start_y; y <= end_y; y += dy)
@@ -31,9 +31,9 @@ void	output_bsp_test_csv(const Point& a, const Point& b, const Point& c, std::of
 			const Point p(x, y);
 			ofs << p.get_x() << "," << p.get_y() << ",";
 			if (bsp(a, b, c, p))
-				ofs << "blue" << std::endl;
+				ofs << "true" << std::endl;
 			else
-				ofs << "red" << std::endl;
+				ofs << "false" << std::endl;
 		}
 	}
 	return ;
